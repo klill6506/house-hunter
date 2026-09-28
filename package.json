@@ -10,16 +10,16 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@prisma/client": "6.19.3",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest",
-    "@prisma/client": "latest"
+    "react-dom": "latest"
   },
   "devDependencies": {
-    "typescript": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
-    "vitest": "latest",
-    "prisma": "latest"
+    "prisma": "6.19.3",
+    "typescript": "latest",
+    "vitest": "latest"
   }
 }
