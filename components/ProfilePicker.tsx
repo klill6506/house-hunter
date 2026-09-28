@@ -25,7 +25,7 @@ export default function ProfilePicker({
       <div className="profileLinks">
         <a href={`/profiles/${encodeURIComponent(current)}`}>Edit criteria</a>
         <a
-          className="button buttonGold"
+          className="button buttonAccent"
           href={`/profiles/new?from=${encodeURIComponent(current)}`}
         >
           + New profile

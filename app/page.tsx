@@ -96,8 +96,8 @@ export default async function Home({
           <span>Homes in the shared collection</span>
         </div>
         <div>
-          <b>{active.length}</b>
-          <span>Preferences shaping your search</span>
+          <b>{active.length + 1}</b>
+          <span>Preferences, including your budget</span>
         </div>
       </section>
       <div className="grid">
@@ -110,8 +110,8 @@ export default async function Home({
             <span className="subtleBadge">Ranked for you</span>
           </div>
           <p className="muted">
-            Up to 40 homes, ranked by your preferences. A high match with little
-            research is a promising lead, not a verified fit.
+            Up to 40 homes, ranked by the details we have. Views, internet,
+            access, and other missing details still need checking.
           </p>
           <ListingResults
             key={profileId}
@@ -152,13 +152,17 @@ export default async function Home({
             </p>
           )}
           <div className="scoreGuide">
-            <h3>Read the scores</h3>
+            <h3>What the numbers mean</h3>
             <p>
-              <b>Match</b> measures how well known facts fit your preferences.
+              <b>Match</b> tells you how well the available details fit your
+              preferences. Missing details don’t lower this score, so even a
+              100% match may need more checking.
             </p>
             <p>
-              <b>Researched</b> measures how much of your wish list has
-              supporting evidence. Unknowns stay unknown.
+              <b>Details available</b> counts the preferences we have
+              information about. For example, price, bedrooms, and bathrooms may
+              be known while the view and internet speed are still unknown. Open
+              the score details to see what’s known, inferred, or missing.
             </p>
           </div>
           <a

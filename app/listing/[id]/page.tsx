@@ -5,6 +5,7 @@ import { configOf, profileCriteria } from "../../../lib/profile-config";
 import type { CriterionResult, Listing } from "../../../lib/types";
 import ScoreBreakdown from "../../../components/ScoreBreakdown";
 import ReactionButtons from "../../../components/ReactionButtons";
+import PreferenceEvidence from "../../../components/PreferenceEvidence";
 export const dynamic = "force-dynamic";
 export default async function ListingPage({
   params,
@@ -61,9 +62,15 @@ export default async function ListingPage({
       </h2>
       <div className="heroScore">
         <b>{r.score}%</b>
-        <span>current match</span>
-        <small>{r.coverage}% researched</small>
+        <span>match on available details</span>
+        <small>
+          <PreferenceEvidence criteria={r.criteria} />
+        </small>
       </div>
+      <p className="muted">
+        Missing details don’t lower the match score. The breakdown below shows
+        what we know and what still needs checking.
+      </p>
       <p>
         {l.price
           ? new Intl.NumberFormat("en-US", {

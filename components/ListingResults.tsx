@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import ReactionButtons from "./ReactionButtons";
+import PreferenceEvidence from "./PreferenceEvidence";
 import type { RankedListing } from "../lib/types";
 const PAGE_SIZE = 10;
 export default function ListingResults({
@@ -91,12 +92,7 @@ export default function ListingResults({
                 )}
               </p>
               <div className="research">
-                <progress
-                  max="100"
-                  value={l.coverage}
-                  aria-label={`${l.coverage}% researched`}
-                />
-                <span>{l.coverage}% researched</span>
+                <PreferenceEvidence criteria={l.criteria} />
                 <a
                   href={`/listing/${encodeURIComponent(l.id)}?profile=${encodeURIComponent(profileId)}`}
                 >
