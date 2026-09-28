@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "test": "vitest run",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "seed": "tsx prisma/seed.ts",
+    "db:push": "prisma db push",
+    "db:seed": "npm run seed"
   },
   "dependencies": {
     "@prisma/client": "6.19.3",
@@ -20,6 +23,10 @@
     "@types/react": "latest",
     "prisma": "6.19.3",
     "typescript": "latest",
-    "vitest": "latest"
+    "vitest": "latest",
+    "tsx": "latest"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   }
 }
