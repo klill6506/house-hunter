@@ -1,0 +1,2 @@
+import {NextResponse} from "next/server";import {scoreProfile} from "../../../../lib/score-service";
+export async function POST(req:Request){const auth=req.headers.get("authorization");const token=process.env.HOUSE_HUNTER_JOB_TOKEN;if(token&&auth!==`Bearer ${token}`)return NextResponse.json({error:"Unauthorized"},{status:401});const b=await req.json().catch(()=>({}));return NextResponse.json(await scoreProfile(b.profileId||"mountain-house"))}
