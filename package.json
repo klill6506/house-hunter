@@ -10,7 +10,8 @@
     "postinstall": "prisma generate",
     "seed": "tsx prisma/seed.ts",
     "db:push": "prisma db push",
-    "db:seed": "npm run seed"
+    "db:seed": "npm run seed",
+    "bootstrap": "tsx scripts/bootstrap.ts"
   },
   "dependencies": {
     "@prisma/client": "6.19.3",
