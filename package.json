@@ -6,17 +6,20 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "vitest run"
+    "test": "vitest run",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "@prisma/client": "latest"
   },
   "devDependencies": {
     "typescript": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
-    "vitest": "latest"
+    "vitest": "latest",
+    "prisma": "latest"
   }
 }
