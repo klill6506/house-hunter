@@ -69,6 +69,23 @@
             "sourceUrl": "https://www.zillow.com/homedetails/111-Summit-View-Dr-Ellijay-GA-30540/105256132_zpid/",
             "checkedAt": "2026-09-28T03:35:06Z"
           }
+        ],
+        "highlights": [
+          {
+            "text": "Finished basement, plus kitchens on both levels.",
+            "sourceUrl": "https://www.zillow.com/homedetails/111-Summit-View-Dr-Ellijay-GA-30540/105256132_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "text": "An elevator connects the living spaces.",
+            "sourceUrl": "https://www.zillow.com/homedetails/111-Summit-View-Dr-Ellijay-GA-30540/105256132_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "text": "Owner listing reports a mountain view.",
+            "sourceUrl": "https://www.zillow.com/homedetails/111-Summit-View-Dr-Ellijay-GA-30540/105256132_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
         ]
       }
     },
@@ -134,7 +151,24 @@
             "checkedAt": "2026-09-28T03:35:06Z"
           }
         ],
-        "notes": []
+        "notes": [],
+        "highlights": [
+          {
+            "text": "Creek frontage with direct creek access.",
+            "sourceUrl": "https://www.zillow.com/homedetails/126-Brookwood-Dr-Blue-Ridge-GA-30513/228810293_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "text": "Covered porches, a hot-tub deck and creekside firepit.",
+            "sourceUrl": "https://www.zillow.com/homedetails/126-Brookwood-Dr-Blue-Ridge-GA-30513/228810293_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "text": "Listing reports mountain views, including seasonal views.",
+            "sourceUrl": "https://www.zillow.com/homedetails/126-Brookwood-Dr-Blue-Ridge-GA-30513/228810293_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ]
       }
     },
     {
@@ -199,7 +233,24 @@
             "checkedAt": "2026-09-28T03:35:06Z"
           }
         ],
-        "notes": []
+        "notes": [],
+        "highlights": [
+          {
+            "text": "Finished terrace level adds bedrooms, living space and a game room.",
+            "sourceUrl": "https://www.redfin.com/GA/Ellijay/128-Summit-View-Dr-30540/home/131810932",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "text": "Main-floor primary suite with a walk-in shower.",
+            "sourceUrl": "https://www.redfin.com/GA/Ellijay/128-Summit-View-Dr-30540/home/131810932",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "text": "Covered front porch with year-round mountain views.",
+            "sourceUrl": "https://www.redfin.com/GA/Ellijay/128-Summit-View-Dr-30540/home/131810932",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ]
       }
     },
     {
@@ -310,6 +361,23 @@
             "sourceUrl": "https://www.zillow.com/homedetails/1306-Ramey-Mountain-Rd-Hiawassee-GA-30546/465029032_zpid/",
             "checkedAt": "2026-09-28T03:35:06Z"
           }
+        ],
+        "highlights": [
+          {
+            "text": "Lake Chatuge and long-range mountain views.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1306-Ramey-Mountain-Rd-Hiawassee-GA-30546/465029032_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "text": "Large covered decks for enjoying the setting.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1306-Ramey-Mountain-Rd-Hiawassee-GA-30546/465029032_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "text": "Main-floor primary suite and laundry.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1306-Ramey-Mountain-Rd-Hiawassee-GA-30546/465029032_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
         ]
       }
     },
@@ -397,6 +465,23 @@
             "sourceUrl": "https://www.zillow.com/homedetails/132-New-Berry-St-Ellijay-GA-30540/105266874_zpid/",
             "checkedAt": "2026-09-28T03:35:06Z"
           }
+        ],
+        "highlights": [
+          {
+            "text": "10.09 acres with long-range mountain views.",
+            "sourceUrl": "https://www.zillow.com/homedetails/132-New-Berry-St-Ellijay-GA-30540/105266874_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "text": "Finished basement and a separate workshop.",
+            "sourceUrl": "https://www.zillow.com/homedetails/132-New-Berry-St-Ellijay-GA-30540/105266874_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "text": "Whole-home generator listed.",
+            "sourceUrl": "https://www.zillow.com/homedetails/132-New-Berry-St-Ellijay-GA-30540/105266874_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
         ]
       }
     },
@@ -450,6 +535,23 @@
           {
             "text": "Availability conflict: Realtor.com shows an active listing, while Redfin reports a September listing removal. Confirm with the listing agent. Community lake/river access does not establish a view or frontage at this home.",
             "sourceUrl": "https://www.redfin.com/GA/Ellijay/1503-Garnet-Dr-30540/home/131884129",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ],
+        "highlights": [
+          {
+            "text": "Finished basement adds extra living space.",
+            "sourceUrl": "https://www.realtor.com/realestateandhomes-detail/1503-Garnet-Dr_Ellijay_GA_30540_M60529-34933",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "text": "Outdoor hot tub and firepit.",
+            "sourceUrl": "https://www.realtor.com/realestateandhomes-detail/1503-Garnet-Dr_Ellijay_GA_30540_M60529-34933",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "text": "Primary bedroom and laundry on the main floor.",
+            "sourceUrl": "https://www.realtor.com/realestateandhomes-detail/1503-Garnet-Dr_Ellijay_GA_30540_M60529-34933",
             "checkedAt": "2026-09-28T03:35:06Z"
           }
         ]
@@ -533,7 +635,24 @@
             "checkedAt": "2026-09-28T03:35:06Z"
           }
         ],
-        "notes": []
+        "notes": [],
+        "highlights": [
+          {
+            "text": "Finished terrace level with recreation space and a garage/workshop.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1567-Hap-Holt-Rd-Ellijay-GA-30540/440589591_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "text": "Year-round mountain views; lake view also listed.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1567-Hap-Holt-Rd-Ellijay-GA-30540/440589591_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "text": "Covered porches, fenced backyard and a level driveway.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1567-Hap-Holt-Rd-Ellijay-GA-30540/440589591_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ]
       }
     },
     {
@@ -617,6 +736,23 @@
         "notes": [
           {
             "text": "Bedroom caution: septic permit is for three bedrooms; one advertised bedroom passes through to the basement. Confirm usable/legal bedroom count.",
+            "sourceUrl": "https://www.zillow.com/homedetails/157-Misty-Mountain-Ln-Ellijay-GA-30540/250800050_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ],
+        "highlights": [
+          {
+            "text": "Long-range, year-round mountain views.",
+            "sourceUrl": "https://www.zillow.com/homedetails/157-Misty-Mountain-Ln-Ellijay-GA-30540/250800050_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "text": "Finished basement and a furnished cabin interior.",
+            "sourceUrl": "https://www.zillow.com/homedetails/157-Misty-Mountain-Ln-Ellijay-GA-30540/250800050_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "text": "Covered porch, private balcony and hot tub listed.",
             "sourceUrl": "https://www.zillow.com/homedetails/157-Misty-Mountain-Ln-Ellijay-GA-30540/250800050_zpid/",
             "checkedAt": "2026-09-28T03:35:06Z"
           }
@@ -715,6 +851,23 @@
             "sourceUrl": "https://www.zillow.com/homedetails/1582-Little-Rock-Creek-Rd-Cherry-Log-GA-30522/2115427851_zpid/",
             "checkedAt": "2026-09-28T03:35:06Z"
           }
+        ],
+        "highlights": [
+          {
+            "text": "Renovated kitchen; offered fully furnished.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1582-Little-Rock-Creek-Rd-Cherry-Log-GA-30522/2115427851_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "text": "Mountain-facing hot tub and outdoor firepit.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1582-Little-Rock-Creek-Rd-Cherry-Log-GA-30522/2115427851_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "text": "Listing reports fiber internet, installed Starlink backup and a whole-house generator.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1582-Little-Rock-Creek-Rd-Cherry-Log-GA-30522/2115427851_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
         ]
       }
     },
@@ -791,6 +944,23 @@
         "notes": [
           {
             "text": "Source currently marks this property PENDING. Ask about availability before planning a visit. Six advertised bathrooms comprise five full and one half.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1613-Clark-Dr-Hiawassee-GA-30546/232401584_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ],
+        "highlights": [
+          {
+            "text": "Mountain and lake views with decks on each level.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1613-Clark-Dr-Hiawassee-GA-30546/232401584_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "text": "Elevator serving the main three floors.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1613-Clark-Dr-Hiawassee-GA-30546/232401584_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "text": "2,200-square-foot garage with multiple work bays.",
             "sourceUrl": "https://www.zillow.com/homedetails/1613-Clark-Dr-Hiawassee-GA-30546/232401584_zpid/",
             "checkedAt": "2026-09-28T03:35:06Z"
           }

@@ -36,6 +36,47 @@ const listing = {
   facts: { research },
 };
 describe("source-backed research", () => {
+  it("keeps sourced highlights and cautions through basic and repeated imports without changing scores", () => {
+    const hit = batch.hits[0] as DiscoveryHit;
+    const before = mergeDiscoveries([hit])[0].listing;
+    const saved = mergeListingFacts(before.facts, {
+      research: { criteria: [], notes: [] },
+    });
+    const repeated = mergeListingFacts(saved, before.facts);
+    expect(researchOf(repeated).highlights).toHaveLength(3);
+    expect(researchOf(repeated).notes).toEqual(hit.research!.notes);
+    const withoutHighlights = {
+      ...before,
+      facts: { research: { ...hit.research, highlights: undefined } },
+    };
+    expect(
+      rankListing(before, profileCriteria(before, [], configOf(null))).score,
+    ).toBe(
+      rankListing(
+        withoutHighlights,
+        profileCriteria(withoutHighlights, [], configOf(null)),
+      ).score,
+    );
+  });
+  it("accepts old research without highlights but rejects unsafe or excessive highlights", () => {
+    expect(validResearch(research)).toBe(true);
+    const note = {
+      text: "Finished basement",
+      sourceUrl: "https://example.com/home",
+      checkedAt: "2026-09-28T03:35:06Z",
+    };
+    expect(validResearch({ ...research, highlights: [note] })).toBe(true);
+    expect(
+      validResearch({
+        ...research,
+        highlights: [{ ...note, sourceUrl: "javascript:alert(1)" }],
+      }),
+    ).toBe(false);
+    expect(
+      validResearch({ ...research, highlights: Array(7).fill(note) }),
+    ).toBe(false);
+    expect(validResearch({ ...research, highlights: [null] })).toBe(false);
+  });
   it("validates the reviewed batch and refuses malformed evidence or unsafe sources", () => {
     expect(batch.hits).toHaveLength(10);
     expect(batch.hits.every((h) => validResearch(h.research))).toBe(true);

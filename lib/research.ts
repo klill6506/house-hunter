@@ -16,6 +16,7 @@ export type ResearchCriterion = Pick<
 export type PropertyResearch = {
   criteria: ResearchCriterion[];
   notes: ResearchNote[];
+  highlights?: ResearchNote[];
 };
 const keys = new Set([
   "price",
@@ -46,6 +47,11 @@ const datedSource = (r: any) =>
   safeSource(r.sourceUrl) &&
   typeof r.checkedAt === "string" &&
   Number.isFinite(Date.parse(r.checkedAt));
+const validNote = (n: ResearchNote) =>
+  datedSource(n) &&
+  typeof n.text === "string" &&
+  n.text.trim().length > 0 &&
+  n.text.length <= 1500;
 export function validResearch(value: unknown): value is PropertyResearch {
   const r = value as PropertyResearch | undefined;
   return (
@@ -55,6 +61,10 @@ export function validResearch(value: unknown): value is PropertyResearch {
     new Set(r.criteria.map((c) => c?.key)).size === r.criteria.length &&
     Array.isArray(r.notes) &&
     r.notes.length <= 10 &&
+    (r.highlights === undefined ||
+      (Array.isArray(r.highlights) &&
+        r.highlights.length <= 6 &&
+        r.highlights.every(validNote))) &&
     r.criteria.every(
       (c) =>
         datedSource(c) &&
@@ -73,13 +83,7 @@ export function validResearch(value: unknown): value is PropertyResearch {
         (!["price", "bedrooms", "bathrooms"].includes(c.key) ||
           c.status === "unknown"),
     ) &&
-    r.notes.every(
-      (n) =>
-        datedSource(n) &&
-        typeof n.text === "string" &&
-        n.text.trim().length > 0 &&
-        n.text.length <= 1500,
-    )
+    r.notes.every(validNote)
   );
 }
 export function researchOf(facts: unknown): PropertyResearch {
@@ -98,11 +102,23 @@ export function mergeResearch(
   }
   const notes = new Map(older.notes.map((n) => [n.sourceUrl + n.text, n]));
   for (const n of incoming.notes) notes.set(n.sourceUrl + n.text, n);
+  const highlights = new Map(
+    (older.highlights || []).map((n) => [n.sourceUrl + n.text, n]),
+  );
+  for (const n of incoming.highlights || [])
+    highlights.set(n.sourceUrl + n.text, n);
   return {
     criteria: [...criteria.values()],
     notes: [...notes.values()]
       .sort((a, b) => Date.parse(b.checkedAt) - Date.parse(a.checkedAt))
       .slice(0, 10),
+    ...(older.highlights || incoming.highlights
+      ? {
+          highlights: [...highlights.values()]
+            .sort((a, b) => Date.parse(b.checkedAt) - Date.parse(a.checkedAt))
+            .slice(0, 6),
+        }
+      : {}),
   };
 }
 export function mergeListingFacts(existing: unknown, incoming: unknown) {

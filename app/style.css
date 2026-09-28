@@ -657,6 +657,18 @@ footer span {
 .researchNotes a {
   white-space: nowrap;
 }
+.researchHighlights {
+  background: #eef6ff;
+  border-color: #c8ddf1;
+  color: #304e70;
+}
+.researchHighlights ul {
+  padding-left: 18px;
+  margin: 7px 0 0;
+}
+.researchHighlights li + li {
+  margin-top: 7px;
+}
 .scoreRow > strong {
   white-space: nowrap;
   font-size: 14px;
