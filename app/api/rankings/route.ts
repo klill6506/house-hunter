@@ -1,0 +1,2 @@
+import {NextResponse} from "next/server";import {db} from "../../../lib/db";
+export async function GET(req:Request){const u=new URL(req.url);const profileId=u.searchParams.get("profileId")||"mountain-house";const limit=Math.min(Number(u.searchParams.get("limit")||40),100);const rows=await db.listingScore.findMany({where:{profileId},include:{listing:true},orderBy:[{score:"desc"},{coverage:"desc"}],take:limit});return NextResponse.json(rows)}
