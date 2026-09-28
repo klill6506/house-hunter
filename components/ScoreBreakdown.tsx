@@ -1,0 +1,2 @@
+import type {CriterionResult} from "../lib/types";
+export default function ScoreBreakdown({criteria}:{criteria:CriterionResult[]}){return <div className="breakdown">{criteria.map(c=><div className="scoreRow" key={c.key}><div><b>{c.label}</b><small>{c.status}{c.evidence?` · ${c.evidence}`:""}</small></div><strong>{c.score===null?"?":Math.round(c.score)}</strong></div>)}</div>}
