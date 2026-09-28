@@ -1,0 +1,3 @@
+import {NextResponse} from "next/server";import {db} from "../../../lib/db";import {mountainHouseProfile} from "../../../lib/profile";
+export async function GET(){return NextResponse.json(await db.searchProfile.findMany({orderBy:{updatedAt:"desc"}}))}
+export async function POST(req:Request){const b=await req.json();if(!b.name)return NextResponse.json({error:"Name required"},{status:400});return NextResponse.json(await db.searchProfile.create({data:{name:b.name,criteria:b.criteria??mountainHouseProfile}}),{status:201})}
