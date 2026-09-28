@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import ReactionButtons from "./ReactionButtons";
+import ResearchNotes from "./ResearchNotes";
 import PreferenceEvidence from "./PreferenceEvidence";
 import type { RankedListing } from "../lib/types";
 const PAGE_SIZE = 10;
@@ -52,7 +53,9 @@ export default function ListingResults({
               <span className="location">
                 {l.city}, {l.state}
               </span>
-              <span className="matchPill">{l.score}% match</span>
+              <span className="matchPill">
+                {l.score}% {l.coverage < 40 ? "early match" : "match"}
+              </span>
             </div>
             <div className="cardBody">
               <div className="propertyHeading">
@@ -91,6 +94,7 @@ export default function ListingResults({
                   </span>
                 )}
               </p>
+              <ResearchNotes facts={l.facts} />
               <div className="research">
                 <PreferenceEvidence criteria={l.criteria} />
                 <a

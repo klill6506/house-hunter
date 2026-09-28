@@ -4,11 +4,15 @@ import { factualCriteria, rankListing } from "./rank";
 import type { CriterionResult, Listing, RankedListing } from "./types";
 export const REVIEW_LIMIT = 40;
 export const PAGE_SIZE = 10;
+// Neutral unknowns affect ordering only; the displayed match still uses known evidence.
+export function rankingPriority(l: Pick<RankedListing, "score" | "coverage">) {
+  return 50 + ((l.score - 50) * l.coverage) / 100;
+}
 export function topMatches<T extends RankedListing>(listings: T[]): T[] {
   return [...listings]
     .sort(
       (a, b) =>
-        b.score - a.score ||
+        rankingPriority(b) - rankingPriority(a) ||
         b.coverage - a.coverage ||
         a.id.localeCompare(b.id),
     )

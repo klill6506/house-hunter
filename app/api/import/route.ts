@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { db } from "../../../lib/db";
 import { mergeDiscoveries, type DiscoveryHit } from "../../../lib/discovery";
+import { validResearch, mergeListingFacts } from "../../../lib/research";
 export async function POST(req: Request) {
   const token = process.env.HOUSE_HUNTER_JOB_TOKEN;
   if (token && req.headers.get("authorization") !== `Bearer ${token}`)
@@ -13,6 +14,14 @@ export async function POST(req: Request) {
       { status: 400 },
     );
   for (const hit of hits) {
+    if (hit?.research !== undefined && !validResearch(hit.research))
+      return NextResponse.json(
+        {
+          error:
+            "Research needs valid criteria, evidence, source links, and review dates.",
+        },
+        { status: 400 },
+      );
     if (
       !hit ||
       !hit.address ||
@@ -68,14 +77,14 @@ export async function POST(req: Request) {
       address: l.address,
       city: l.city,
       state: l.state,
-      price: l.price || null,
-      beds: l.beds || null,
-      baths: l.baths || null,
-      sqft: l.sqft || null,
+      price: l.price || existing?.price || null,
+      beds: l.beds || existing?.beds || null,
+      baths: l.baths || existing?.baths || null,
+      sqft: l.sqft || existing?.sqft || null,
       url: l.url,
       source: l.source,
       description: l.description,
-      facts: l.facts as any,
+      facts: mergeListingFacts(existing?.facts, l.facts) as any,
     };
     await db.listing.upsert({
       where: { id },

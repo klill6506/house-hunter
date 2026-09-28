@@ -1,5 +1,6 @@
 import { mountainHouseProfile } from "./profile";
 import type { CriterionResult, Listing } from "./types";
+import { researchOf } from "./research";
 export type ProfileConfig = {
   price: { min: number; max: number };
   anchor?: string;
@@ -136,6 +137,19 @@ export function profileCriteria(
       status: count ? "confirmed" : "unknown",
       evidence: count ? `${count} ${key}` : undefined,
     });
+  }
+  // Reviewed source evidence supersedes older automated scores, including explicit unknowns/conflicts.
+  for (const reviewed of researchOf(l.facts).criteria) {
+    const prior = mapped.get(reviewed.key);
+    if (prior)
+      mapped.set(reviewed.key, {
+        ...prior,
+        score: reviewed.score,
+        status: reviewed.status,
+        evidence: reviewed.evidence,
+        sourceUrl: reviewed.sourceUrl,
+        checkedAt: reviewed.checkedAt,
+      });
   }
   return [...mapped.values()].map((c) =>
     c.status === "unknown" ? { ...c, score: null } : c,

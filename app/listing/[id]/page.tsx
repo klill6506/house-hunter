@@ -5,6 +5,7 @@ import { configOf, profileCriteria } from "../../../lib/profile-config";
 import type { CriterionResult, Listing } from "../../../lib/types";
 import ScoreBreakdown from "../../../components/ScoreBreakdown";
 import ReactionButtons from "../../../components/ReactionButtons";
+import ResearchNotes from "../../../components/ResearchNotes";
 import PreferenceEvidence from "../../../components/PreferenceEvidence";
 export const dynamic = "force-dynamic";
 export default async function ListingPage({
@@ -63,9 +64,9 @@ export default async function ListingPage({
       <div className="heroScore">
         <b>{r.score}%</b>
         <span>match on available details</span>
-        <small>
+        <div className="heroEvidence">
           <PreferenceEvidence criteria={r.criteria} />
-        </small>
+        </div>
       </div>
       <p className="muted">
         Missing details don’t lower the match score. The breakdown below shows
@@ -82,6 +83,7 @@ export default async function ListingPage({
         · {l.beds || "Unknown"} bedrooms · {l.baths || "Unknown"} bathrooms
         {l.sqft ? ` · ${l.sqft.toLocaleString()} sq ft` : ""}
       </p>
+      <ResearchNotes facts={l.facts} />
       <ReactionButtons id={l.id} profileId={profileId} />
       <h2 style={{ marginTop: 32 }}>Why it scored this way</h2>
       <ScoreBreakdown criteria={r.criteria} />

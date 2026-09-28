@@ -1,9 +1,9 @@
 :root {
-  --slate: #146fad;
+  --slate: #346c9e;
   --ink: #29384b;
   --muted: #627085;
-  --line: #d3e5f3;
-  --paper: #eef7ff;
+  --line: #dce3ed;
+  --paper: #f2f7fc;
   --accent: #e0f1ff;
 }
 * {
@@ -93,7 +93,7 @@ button,
 button:hover,
 .button:hover,
 .viewButton:hover {
-  background: #0c598e;
+  background: #285984;
 }
 button:disabled {
   opacity: 0.6;
@@ -105,7 +105,7 @@ button:disabled {
   border-color: #c9d5e4;
 }
 .buttonSecondary:hover {
-  background: #eaf5ff;
+  background: #eef5fc;
 }
 .fullWidth {
   width: 100%;
@@ -136,8 +136,8 @@ button:disabled {
   align-items: center;
   justify-content: space-between;
   gap: 42px;
-  background: linear-gradient(115deg, #c5e7ff, #83c6f4);
-  color: #163e60;
+  background: linear-gradient(115deg, #3e709f, #537fa6);
+  color: white;
   border: 1px solid #ffffff60;
   box-shadow: 0 12px 32px #334c7015;
   border-radius: 26px;
@@ -152,8 +152,8 @@ button:disabled {
   right: -230px;
   top: -280px;
   border-radius: 50%;
-  border: 90px solid #ffffff14;
-  box-shadow: 0 0 0 90px #ffffff0b;
+  border: 90px solid #ffffff07;
+  box-shadow: 0 0 0 90px #ffffff04;
   pointer-events: none;
 }
 .heroCopy {
@@ -166,11 +166,11 @@ button:disabled {
   margin-bottom: 15px;
 }
 .hero .eyebrow {
-  color: #275f87;
+  color: var(--accent);
 }
 .heroCopy > p:not(.eyebrow) {
   font-size: 18px;
-  color: #275574;
+  color: #e9f4ff;
   margin-bottom: 24px;
 }
 .heroTags {
@@ -179,8 +179,8 @@ button:disabled {
   gap: 8px;
 }
 .heroTags span {
-  background: #ffffff66;
-  border: 1px solid #ffffff70;
+  background: #ffffff12;
+  border: 1px solid #ffffff25;
   border-radius: 30px;
   padding: 7px 12px;
   font-size: 12px;
@@ -229,7 +229,7 @@ button:disabled {
   padding: 9px 12px;
 }
 .profileLinks .buttonAccent:hover {
-  background: #0c598e;
+  background: #285984;
 }
 .stats {
   display: grid;
@@ -315,7 +315,7 @@ button:disabled {
   align-items: center;
   gap: 12px;
   padding: 12px 22px;
-  background: #eaf5ff;
+  background: #eef5fc;
   border-bottom: 1px solid var(--line);
 }
 .rank {
@@ -329,8 +329,8 @@ button:disabled {
   flex: 1;
 }
 .matchPill {
-  background: #d5ebff;
-  color: #155783;
+  background: #e0effc;
+  color: #2e618b;
   padding: 5px 10px;
   border-radius: 20px;
   font-size: 12px;
@@ -444,7 +444,7 @@ button:disabled {
 aside {
   border: 1px solid var(--line);
   border-radius: 20px;
-  background: #e3f1fc;
+  background: #e9f2fb;
   padding: 24px;
 }
 aside h2 {
@@ -622,6 +622,52 @@ footer span {
 .sourceLink {
   display: inline-block;
   margin: 20px 0;
+}
+.evidenceSummary {
+  display: grid;
+  gap: 4px;
+}
+.evidenceSummary small {
+  font-size: 11px;
+  color: var(--muted);
+}
+.heroEvidence {
+  margin-left: auto;
+  font-size: 13px;
+}
+.researchNotes {
+  background: #fff6e9;
+  border: 1px solid #eedbbd;
+  border-radius: 12px;
+  padding: 13px 15px;
+  font-size: 12px;
+  margin: 0 0 18px;
+  color: #694b25;
+}
+.researchNotes > strong {
+  display: block;
+  margin-bottom: 5px;
+}
+.researchNotes p {
+  margin-bottom: 6px;
+}
+.researchNotes p:last-child {
+  margin-bottom: 0;
+}
+.researchNotes a {
+  white-space: nowrap;
+}
+.scoreRow > strong {
+  white-space: nowrap;
+  font-size: 14px;
+}
+.scoreRow small {
+  margin-top: 5px;
+}
+@media (max-width: 760px) {
+  .heroEvidence {
+    margin-left: 0;
+  }
 }
 @media (min-width: 1050px) {
   aside {

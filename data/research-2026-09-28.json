@@ -1,0 +1,801 @@
+{
+  "hits": [
+    {
+      "source": "Public listing review",
+      "sourceUrl": "https://www.zillow.com/homedetails/111-Summit-View-Dr-Ellijay-GA-30540/105256132_zpid/",
+      "address": "111 Summit View Dr",
+      "city": "Ellijay",
+      "state": "GA",
+      "price": 719000,
+      "beds": 4,
+      "baths": 5,
+      "sqft": 3592,
+      "discoveredAt": "2026-09-28T03:35:06Z",
+      "fsbo": true,
+      "research": {
+        "criteria": [
+          {
+            "key": "mountainView",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Current owner listing reports a mountain view; assess the actual view on a visit.",
+            "sourceUrl": "https://www.zillow.com/homedetails/111-Summit-View-Dr-Ellijay-GA-30540/105256132_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "singleFamily",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Current listing identifies a single-family home.",
+            "sourceUrl": "https://www.zillow.com/homedetails/111-Summit-View-Dr-Ellijay-GA-30540/105256132_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "mainFloorLiving",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Earlier broker listing places the primary suite, kitchen and laundry on the main floor; confirm the current layout.",
+            "sourceUrl": "https://www.redfin.com/GA/Ellijay/111-Summit-View-Dr-30540/home/131649879",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "outdoorLiving",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Earlier broker listing describes decks and a pergola; confirm present condition.",
+            "sourceUrl": "https://www.redfin.com/GA/Ellijay/111-Summit-View-Dr-30540/home/131649879",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "highSpeedInternet",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Earlier broker listing says high-speed service is available; provider and measured speeds remain unverified.",
+            "sourceUrl": "https://www.redfin.com/GA/Ellijay/111-Summit-View-Dr-30540/home/131649879",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "smallTownProximity",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Earlier broker description places the home minutes from town; no route timing checked.",
+            "sourceUrl": "https://www.redfin.com/GA/Ellijay/111-Summit-View-Dr-30540/home/131649879",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ],
+        "notes": [
+          {
+            "text": "Owner listing now asks $719,000; older broker pages still show $754,000. Bathrooms comprise three full and two half baths. Earlier broker details need reconfirmation.",
+            "sourceUrl": "https://www.zillow.com/homedetails/111-Summit-View-Dr-Ellijay-GA-30540/105256132_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ]
+      }
+    },
+    {
+      "source": "Public listing review",
+      "sourceUrl": "https://www.zillow.com/homedetails/126-Brookwood-Dr-Blue-Ridge-GA-30513/228810293_zpid/",
+      "address": "126 Brookwood Dr",
+      "city": "Blue Ridge",
+      "state": "GA",
+      "price": 599900,
+      "beds": 4,
+      "baths": 3,
+      "sqft": 2464,
+      "discoveredAt": "2026-09-28T03:35:06Z",
+      "research": {
+        "criteria": [
+          {
+            "key": "mountainView",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Listing reports mountain views, including seasonal views; verify sightlines.",
+            "sourceUrl": "https://www.zillow.com/homedetails/126-Brookwood-Dr-Blue-Ridge-GA-30513/228810293_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "water",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Listing reports creek frontage and creek access.",
+            "sourceUrl": "https://www.zillow.com/homedetails/126-Brookwood-Dr-Blue-Ridge-GA-30513/228810293_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "outdoorLiving",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Covered porches, dining deck, hot-tub deck and creekside firepit are described.",
+            "sourceUrl": "https://www.zillow.com/homedetails/126-Brookwood-Dr-Blue-Ridge-GA-30513/228810293_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "singleFamily",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Listing classifies the property as a single-family home.",
+            "sourceUrl": "https://www.zillow.com/homedetails/126-Brookwood-Dr-Blue-Ridge-GA-30513/228810293_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "highSpeedInternet",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Fiber and other internet options are listed; installed service and speeds need verification.",
+            "sourceUrl": "https://www.zillow.com/homedetails/126-Brookwood-Dr-Blue-Ridge-GA-30513/228810293_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "strEligible",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Rental history is advertised. Current permits, HOA rules and transferability are not verified.",
+            "sourceUrl": "https://www.zillow.com/homedetails/126-Brookwood-Dr-Blue-Ridge-GA-30513/228810293_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ],
+        "notes": []
+      }
+    },
+    {
+      "source": "Public listing review",
+      "sourceUrl": "https://www.zillow.com/homedetails/128-Summit-View-Dr-Ellijay-GA-30540/105256125_zpid/",
+      "address": "128 Summit View Dr",
+      "city": "Ellijay",
+      "state": "GA",
+      "price": 550000,
+      "beds": 4,
+      "baths": 3,
+      "sqft": 2676,
+      "discoveredAt": "2026-09-28T03:35:06Z",
+      "research": {
+        "criteria": [
+          {
+            "key": "mountainView",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Listing explicitly describes year-round mountain views.",
+            "sourceUrl": "https://www.redfin.com/GA/Ellijay/128-Summit-View-Dr-30540/home/131810932",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "mainFloorLiving",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Main-level primary suite and bathroom with connected kitchen and living areas are described.",
+            "sourceUrl": "https://www.redfin.com/GA/Ellijay/128-Summit-View-Dr-30540/home/131810932",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "outdoorLiving",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Covered front porch is described as a place to enjoy the view.",
+            "sourceUrl": "https://www.redfin.com/GA/Ellijay/128-Summit-View-Dr-30540/home/131810932",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "singleFamily",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Listing identifies a detached single-family home with no shared walls.",
+            "sourceUrl": "https://www.redfin.com/GA/Ellijay/128-Summit-View-Dr-30540/home/131810932",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "smallTownProximity",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Description says minutes from downtown Ellijay; travel time is not independently checked.",
+            "sourceUrl": "https://www.redfin.com/GA/Ellijay/128-Summit-View-Dr-30540/home/131810932",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "moveInReady",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Listing describes a maintained home and newly finished terrace level; no inspection reviewed.",
+            "sourceUrl": "https://www.redfin.com/GA/Ellijay/128-Summit-View-Dr-30540/home/131810932",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ],
+        "notes": []
+      }
+    },
+    {
+      "source": "Public listing review",
+      "sourceUrl": "https://www.zillow.com/homedetails/1306-Ramey-Mountain-Rd-Hiawassee-GA-30546/465029032_zpid/",
+      "address": "1306 Ramey Mountain Rd",
+      "city": "Hiawassee",
+      "state": "GA",
+      "price": 689000,
+      "beds": 4,
+      "baths": 4,
+      "sqft": 3200,
+      "discoveredAt": "2026-09-28T03:35:06Z",
+      "research": {
+        "criteria": [
+          {
+            "key": "mountainView",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Listing describes long-range mountain views.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1306-Ramey-Mountain-Rd-Hiawassee-GA-30546/465029032_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "water",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Listing explicitly reports views of Lake Chatuge.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1306-Ramey-Mountain-Rd-Hiawassee-GA-30546/465029032_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "mainFloorLiving",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Main-level primary suite, kitchen, living area and laundry are described.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1306-Ramey-Mountain-Rd-Hiawassee-GA-30546/465029032_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "outdoorLiving",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Large covered decks are described.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1306-Ramey-Mountain-Rd-Hiawassee-GA-30546/465029032_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "singleFamily",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Listing classifies the home as single-family.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1306-Ramey-Mountain-Rd-Hiawassee-GA-30546/465029032_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "highSpeedInternet",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Fiber and Starlink are listed; actual service and speeds remain unverified.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1306-Ramey-Mountain-Rd-Hiawassee-GA-30546/465029032_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "smallTownProximity",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Listing says minutes from Hiawassee and Young Harris; routes are unchecked.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1306-Ramey-Mountain-Rd-Hiawassee-GA-30546/465029032_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "yearRoundAccess",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Paved road and asphalt driveway are listed; winter conditions and grade need checking.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1306-Ramey-Mountain-Rd-Hiawassee-GA-30546/465029032_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "moveInReady",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "New construction with an unfinished basement area; completion status needs confirmation.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1306-Ramey-Mountain-Rd-Hiawassee-GA-30546/465029032_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "bedrooms",
+            "score": null,
+            "status": "unknown",
+            "evidence": "Headline says four bedrooms, but the description says the fourth bedroom still needs conversion.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1306-Ramey-Mountain-Rd-Hiawassee-GA-30546/465029032_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "bathrooms",
+            "score": null,
+            "status": "unknown",
+            "evidence": "Headline says four bathrooms; description says the fourth is only plumbed.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1306-Ramey-Mountain-Rd-Hiawassee-GA-30546/465029032_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ],
+        "notes": [
+          {
+            "text": "Bedroom/bathroom conflict: advertised as 4/4, but description indicates a fourth bedroom and bathroom are unfinished. Confirm completed rooms before relying on the count.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1306-Ramey-Mountain-Rd-Hiawassee-GA-30546/465029032_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ]
+      }
+    },
+    {
+      "source": "Public listing review",
+      "sourceUrl": "https://www.zillow.com/homedetails/132-New-Berry-St-Ellijay-GA-30540/105266874_zpid/",
+      "address": "132 New Berry St",
+      "city": "Ellijay",
+      "state": "GA",
+      "price": 599000,
+      "beds": 4,
+      "baths": 3,
+      "sqft": 2728,
+      "discoveredAt": "2026-09-28T03:35:06Z",
+      "research": {
+        "criteria": [
+          {
+            "key": "mountainView",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Listing explicitly describes long-range mountain views.",
+            "sourceUrl": "https://www.zillow.com/homedetails/132-New-Berry-St-Ellijay-GA-30540/105266874_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "mainFloorLiving",
+            "score": 0,
+            "status": "confirmed",
+            "evidence": "Primary bedroom is listed on the upper level, contrary to the main-floor preference.",
+            "sourceUrl": "https://www.zillow.com/homedetails/132-New-Berry-St-Ellijay-GA-30540/105266874_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "outdoorLiving",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Private grounds, garden and firepit are listed.",
+            "sourceUrl": "https://www.zillow.com/homedetails/132-New-Berry-St-Ellijay-GA-30540/105266874_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "singleFamily",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Listing classifies this as a single-family home.",
+            "sourceUrl": "https://www.zillow.com/homedetails/132-New-Berry-St-Ellijay-GA-30540/105266874_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "highSpeedInternet",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Fiber is listed; service availability and measured speeds require confirmation.",
+            "sourceUrl": "https://www.zillow.com/homedetails/132-New-Berry-St-Ellijay-GA-30540/105266874_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "smallTownProximity",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Listing says minutes from downtown Ellijay; route timing is unchecked.",
+            "sourceUrl": "https://www.zillow.com/homedetails/132-New-Berry-St-Ellijay-GA-30540/105266874_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "yearRoundAccess",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Paved road is listed, with a sloping lot; driveway grade and winter access remain unchecked.",
+            "sourceUrl": "https://www.zillow.com/homedetails/132-New-Berry-St-Ellijay-GA-30540/105266874_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "strEligible",
+            "score": 0,
+            "status": "confirmed",
+            "evidence": "Listing says deed restrictions limit use to a primary residence and prohibit short-term rental turnover.",
+            "sourceUrl": "https://www.zillow.com/homedetails/132-New-Berry-St-Ellijay-GA-30540/105266874_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ],
+        "notes": [
+          {
+            "text": "Potential dealbreakers: primary bedroom upstairs; listing states primary-residence-only deed restrictions. Review the deed before any rental plans.",
+            "sourceUrl": "https://www.zillow.com/homedetails/132-New-Berry-St-Ellijay-GA-30540/105266874_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ]
+      }
+    },
+    {
+      "source": "Public listing review",
+      "sourceUrl": "https://www.zillow.com/homedetails/1503-Garnet-Dr-Ellijay-GA-30540/126445972_zpid/",
+      "address": "1503 Garnet Dr",
+      "city": "Ellijay",
+      "state": "GA",
+      "price": 699000,
+      "beds": 4,
+      "baths": 3,
+      "sqft": 3237,
+      "discoveredAt": "2026-09-28T03:35:06Z",
+      "research": {
+        "criteria": [
+          {
+            "key": "mainFloorLiving",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Primary bedroom and laundry are on the main floor; confirm the full daily-living layout.",
+            "sourceUrl": "https://www.realtor.com/realestateandhomes-detail/1503-Garnet-Dr_Ellijay_GA_30540_M60529-34933",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "outdoorLiving",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Hot tub and firepit are listed.",
+            "sourceUrl": "https://www.realtor.com/realestateandhomes-detail/1503-Garnet-Dr_Ellijay_GA_30540_M60529-34933",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "singleFamily",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Listing identifies a single-family cabin.",
+            "sourceUrl": "https://www.realtor.com/realestateandhomes-detail/1503-Garnet-Dr_Ellijay_GA_30540_M60529-34933",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "strEligible",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Rental operation is advertised; current permission and transferability need confirmation.",
+            "sourceUrl": "https://www.realtor.com/realestateandhomes-detail/1503-Garnet-Dr_Ellijay_GA_30540_M60529-34933",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ],
+        "notes": [
+          {
+            "text": "Availability conflict: Realtor.com shows an active listing, while Redfin reports a September listing removal. Confirm with the listing agent. Community lake/river access does not establish a view or frontage at this home.",
+            "sourceUrl": "https://www.redfin.com/GA/Ellijay/1503-Garnet-Dr-30540/home/131884129",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ]
+      }
+    },
+    {
+      "source": "Public listing review",
+      "sourceUrl": "https://www.zillow.com/homedetails/1567-Hap-Holt-Rd-Ellijay-GA-30540/440589591_zpid/",
+      "address": "1567 Hap Holt Rd",
+      "city": "Ellijay",
+      "state": "GA",
+      "price": 961000,
+      "beds": 4,
+      "baths": 3,
+      "sqft": 3268,
+      "discoveredAt": "2026-09-28T03:35:06Z",
+      "research": {
+        "criteria": [
+          {
+            "key": "mountainView",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Year-round mountain views are explicitly described.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1567-Hap-Holt-Rd-Ellijay-GA-30540/440589591_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "water",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Property facts list a lake view; nearby boat access alone was not used as evidence.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1567-Hap-Holt-Rd-Ellijay-GA-30540/440589591_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "mainFloorLiving",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Ranch layout includes main-level primary suite, kitchen, living and laundry.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1567-Hap-Holt-Rd-Ellijay-GA-30540/440589591_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "outdoorLiving",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Covered porch, lower patio and fenced outdoor space are described.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1567-Hap-Holt-Rd-Ellijay-GA-30540/440589591_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "singleFamily",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Listing identifies a single-family ranch.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1567-Hap-Holt-Rd-Ellijay-GA-30540/440589591_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "highSpeedInternet",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "High-speed internet and cable availability are listed; speeds and provider remain unchecked.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1567-Hap-Holt-Rd-Ellijay-GA-30540/440589591_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "smallTownProximity",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Listing estimates 15 minutes to Ellijay; route timing is unverified.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1567-Hap-Holt-Rd-Ellijay-GA-30540/440589591_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "yearRoundAccess",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Paved approach and level driveway are described; winter access is not established.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1567-Hap-Holt-Rd-Ellijay-GA-30540/440589591_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ],
+        "notes": []
+      }
+    },
+    {
+      "source": "Public listing review",
+      "sourceUrl": "https://www.zillow.com/homedetails/157-Misty-Mountain-Ln-Ellijay-GA-30540/250800050_zpid/",
+      "address": "157 Misty Mountain Ln",
+      "city": "Ellijay",
+      "state": "GA",
+      "price": 975000,
+      "beds": 4,
+      "baths": 3,
+      "sqft": 3485,
+      "discoveredAt": "2026-09-28T03:35:06Z",
+      "research": {
+        "criteria": [
+          {
+            "key": "mountainView",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Listing explicitly reports long-range year-round mountain views.",
+            "sourceUrl": "https://www.zillow.com/homedetails/157-Misty-Mountain-Ln-Ellijay-GA-30540/250800050_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "mainFloorLiving",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Primary bedroom is listed on the main floor; full single-level living needs checking.",
+            "sourceUrl": "https://www.zillow.com/homedetails/157-Misty-Mountain-Ln-Ellijay-GA-30540/250800050_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "outdoorLiving",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Private balcony, covered porch and outdoor gathering space are described.",
+            "sourceUrl": "https://www.zillow.com/homedetails/157-Misty-Mountain-Ln-Ellijay-GA-30540/250800050_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "singleFamily",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Listing identifies a single-family cabin.",
+            "sourceUrl": "https://www.zillow.com/homedetails/157-Misty-Mountain-Ln-Ellijay-GA-30540/250800050_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "highSpeedInternet",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Cable internet is listed; provider and actual speeds remain unverified.",
+            "sourceUrl": "https://www.zillow.com/homedetails/157-Misty-Mountain-Ln-Ellijay-GA-30540/250800050_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "strEligible",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Existing rental history is advertised; current restrictions and permits need checking.",
+            "sourceUrl": "https://www.zillow.com/homedetails/157-Misty-Mountain-Ln-Ellijay-GA-30540/250800050_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "yearRoundAccess",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Paved road and asphalt driveway are listed; steep terrain requires a closer look.",
+            "sourceUrl": "https://www.zillow.com/homedetails/157-Misty-Mountain-Ln-Ellijay-GA-30540/250800050_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "bedrooms",
+            "score": null,
+            "status": "unknown",
+            "evidence": "Four bedrooms are advertised, but the listing says the septic permit is for three and one room is a pass-through.",
+            "sourceUrl": "https://www.zillow.com/homedetails/157-Misty-Mountain-Ln-Ellijay-GA-30540/250800050_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ],
+        "notes": [
+          {
+            "text": "Bedroom caution: septic permit is for three bedrooms; one advertised bedroom passes through to the basement. Confirm usable/legal bedroom count.",
+            "sourceUrl": "https://www.zillow.com/homedetails/157-Misty-Mountain-Ln-Ellijay-GA-30540/250800050_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ]
+      }
+    },
+    {
+      "source": "Public listing review",
+      "sourceUrl": "https://www.zillow.com/homedetails/1582-Little-Rock-Creek-Rd-Cherry-Log-GA-30522/2115427851_zpid/",
+      "address": "1582 Little Rock Creek Rd",
+      "city": "Cherry Log",
+      "state": "GA",
+      "price": 549000,
+      "beds": 4,
+      "baths": 3,
+      "sqft": 2056,
+      "discoveredAt": "2026-09-28T03:35:06Z",
+      "research": {
+        "criteria": [
+          {
+            "key": "mountainView",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Description reports year-round mountain and valley views.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1582-Little-Rock-Creek-Rd-Cherry-Log-GA-30522/2115427851_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "outdoorLiving",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Porch, hot tub and firepit are described.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1582-Little-Rock-Creek-Rd-Cherry-Log-GA-30522/2115427851_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "singleFamily",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Listing classifies this as a single-family home.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1582-Little-Rock-Creek-Rd-Cherry-Log-GA-30522/2115427851_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "highSpeedInternet",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Listing reports fiber service and installed Starlink backup; no speed test reviewed.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1582-Little-Rock-Creek-Rd-Cherry-Log-GA-30522/2115427851_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "moveInReady",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Listing describes renovated interiors and turnkey furnishings; condition remains uninspected.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1582-Little-Rock-Creek-Rd-Cherry-Log-GA-30522/2115427851_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "smallTownProximity",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Description estimates 15 minutes to Blue Ridge and Ellijay; timings remain unverified.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1582-Little-Rock-Creek-Rd-Cherry-Log-GA-30522/2115427851_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "strEligible",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Established rental use is advertised; current permits and restrictions require checking.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1582-Little-Rock-Creek-Rd-Cherry-Log-GA-30522/2115427851_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "bedrooms",
+            "score": null,
+            "status": "unknown",
+            "evidence": "Headline says four bedrooms; description says three bedrooms plus a separate bunk/flex space.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1582-Little-Rock-Creek-Rd-Cherry-Log-GA-30522/2115427851_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "mainFloorLiving",
+            "score": null,
+            "status": "unknown",
+            "evidence": "Primary level is listed as Main,Upper and laundry is in the basement; daily living layout is unclear.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1582-Little-Rock-Creek-Rd-Cherry-Log-GA-30522/2115427851_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ],
+        "notes": [
+          {
+            "text": "Bedroom conflict: advertised four bedrooms include a bunk/flex space. Main-floor living is not established. Gravel road access needs a closer check.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1582-Little-Rock-Creek-Rd-Cherry-Log-GA-30522/2115427851_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ]
+      }
+    },
+    {
+      "source": "Public listing review",
+      "sourceUrl": "https://www.zillow.com/homedetails/1613-Clark-Dr-Hiawassee-GA-30546/232401584_zpid/",
+      "address": "1613 Clark Dr",
+      "city": "Hiawassee",
+      "state": "GA",
+      "price": 839900,
+      "beds": 4,
+      "baths": 6,
+      "sqft": 8436,
+      "discoveredAt": "2026-09-28T03:35:06Z",
+      "research": {
+        "criteria": [
+          {
+            "key": "mountainView",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Listing reports mountain views.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1613-Clark-Dr-Hiawassee-GA-30546/232401584_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "water",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Listing reports lake and river views.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1613-Clark-Dr-Hiawassee-GA-30546/232401584_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "outdoorLiving",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Decks on each level are described.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1613-Clark-Dr-Hiawassee-GA-30546/232401584_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "singleFamily",
+            "score": 100,
+            "status": "confirmed",
+            "evidence": "Listing classifies this as a single-family home.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1613-Clark-Dr-Hiawassee-GA-30546/232401584_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "mainFloorLiving",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Primary bedroom and laundry are listed on the main floor; elevator serves three levels. Confirm kitchen/bath layout.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1613-Clark-Dr-Hiawassee-GA-30546/232401584_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "smallTownProximity",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Description places the home within five miles of Hiawassee; no travel-time check completed.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1613-Clark-Dr-Hiawassee-GA-30546/232401584_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          },
+          {
+            "key": "yearRoundAccess",
+            "score": 65,
+            "status": "inferred",
+            "evidence": "Paved road and concrete driveway are listed; steep terrain and winter conditions need checking.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1613-Clark-Dr-Hiawassee-GA-30546/232401584_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ],
+        "notes": [
+          {
+            "text": "Source currently marks this property PENDING. Ask about availability before planning a visit. Six advertised bathrooms comprise five full and one half.",
+            "sourceUrl": "https://www.zillow.com/homedetails/1613-Clark-Dr-Hiawassee-GA-30546/232401584_zpid/",
+            "checkedAt": "2026-09-28T03:35:06Z"
+          }
+        ]
+      }
+    }
+  ]
+}

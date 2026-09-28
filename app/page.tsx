@@ -110,8 +110,9 @@ export default async function Home({
             <span className="subtleBadge">Ranked for you</span>
           </div>
           <p className="muted">
-            Up to 40 homes, ranked by the details we have. Views, internet,
-            access, and other missing details still need checking.
+            Up to 40 homes, ranked by fit and strength of supporting details.
+            Open a home to see source links, partial clues, and what still needs
+            checking.
           </p>
           <ListingResults
             key={profileId}
@@ -152,6 +153,11 @@ export default async function Home({
             </p>
           )}
           <div className="scoreGuide">
+            <p>
+              Ranking considers both fit and how much we know, so a
+              well-supported match can outrank an early lead with only basic
+              details.
+            </p>
             <h3>What the numbers mean</h3>
             <p>
               <b>Match</b> tells you how well the available details fit your
@@ -159,10 +165,11 @@ export default async function Home({
               100% match may need more checking.
             </p>
             <p>
-              <b>Details available</b> counts the preferences we have
-              information about. For example, price, bedrooms, and bathrooms may
-              be known while the view and internet speed are still unknown. Open
-              the score details to see what’s known, inferred, or missing.
+              <b>Details available</b> includes source statements and partial
+              clues. A clue may suggest a fit without establishing it—for
+              example, an internet option without measured speeds. Missing or
+              conflicting information stays unknown. Source statements still
+              need your verification.
             </p>
           </div>
           <a
