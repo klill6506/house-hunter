@@ -1,0 +1,2 @@
+import {NextResponse} from "next/server";import {db} from "../../../lib/db";
+export async function GET(){let database=false;try{await db.$queryRaw`SELECT 1`;database=true}catch{}return NextResponse.json({ok:database,database,jevConfigured:Boolean(process.env.JEV_API_KEY),jobTokenConfigured:Boolean(process.env.HOUSE_HUNTER_JOB_TOKEN),time:new Date().toISOString()},{status:database?200:503})}
