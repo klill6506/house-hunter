@@ -1,0 +1,4 @@
+import {PrismaClient} from "@prisma/client";import {mountainHouseProfile} from "../lib/profile";import {seedListings} from "../lib/listings";
+const db=new PrismaClient();
+async function main(){const profile=await db.searchProfile.upsert({where:{id:"mountain-house"},update:{criteria:mountainHouseProfile as any},create:{id:"mountain-house",name:"Mountain House",criteria:mountainHouseProfile as any}});for(const l of seedListings){await db.listing.upsert({where:{id:l.id},update:{address:l.address,city:l.city,state:l.state,price:l.price,beds:l.beds,baths:l.baths,sqft:l.sqft,acres:l.acres,url:l.url,source:l.source,description:l.description,facts:l.facts as any},create:{id:l.id,address:l.address,city:l.city,state:l.state,price:l.price,beds:l.beds,baths:l.baths,sqft:l.sqft,acres:l.acres,url:l.url,source:l.source,description:l.description,facts:l.facts as any}})}console.log("Seeded",profile.name,seedListings.length,"listings")}
+main().finally(()=>db.$disconnect());
