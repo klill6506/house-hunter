@@ -1,0 +1,7 @@
+generator client { provider = "prisma-client-js" }
+datasource db { provider = "postgresql" url = env("DATABASE_URL") }
+model SearchProfile { id String @id @default(cuid()) name String criteria Json createdAt DateTime @default(now()) updatedAt DateTime @updatedAt reactions Reaction[] scores ListingScore[] }
+model Listing { id String @id address String city String state String price Int? beds Float? baths Float? sqft Int? acres Float? url String? source String description String? facts Json? updatedAt DateTime @updatedAt sightings SourceSighting[] reactions Reaction[] scores ListingScore[] @@index([city,state]) }
+model SourceSighting { id String @id @default(cuid()) listingId String listing Listing @relation(fields:[listingId],references:[id],onDelete:Cascade) source String sourceUrl String discoveredAt DateTime facts Json? @@index([listingId]) }
+model Reaction { id String @id @default(cuid()) profileId String listingId String value String note String? createdAt DateTime @default(now()) profile SearchProfile @relation(fields:[profileId],references:[id],onDelete:Cascade) listing Listing @relation(fields:[listingId],references:[id],onDelete:Cascade) @@unique([profileId,listingId]) }
+model ListingScore { id String @id @default(cuid()) profileId String listingId String score Float coverage Float criteria Json scoredAt DateTime @default(now()) profile SearchProfile @relation(fields:[profileId],references:[id],onDelete:Cascade) listing Listing @relation(fields:[listingId],references:[id],onDelete:Cascade) @@unique([profileId,listingId]) }
