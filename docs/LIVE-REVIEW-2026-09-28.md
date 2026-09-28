@@ -29,4 +29,9 @@ Local integration uses a disposable SQLite copy of the same Prisma schema only f
 
 ## Refreshing inventory
 Use public search or an authorized feed to produce DiscoveryHit records, then POST {"hits":[...]} to /api/import with the existing server job token if configured. The importer preserves listing identities and records source dates; reimporting the same snapshot is idempotent. Imported homes appear immediately with factual scores. New geographic coverage still requires a new discovery batch. This release does not add a search-provider subscription or a scheduled crawler.
+## Release status
+Application changes were pushed to main as 55c8550. Production build, TypeScript, 10 unit tests, browser pagination/profile/mobile checks, and local import/idempotent identity handling passed. Existing profile changes survived bootstrap in the local integration check.
 
+After the push, both house-hunter.kenlill.com and coolify.kenlill.com began timing out on HTTPS from this workstation; both resolve to the same host. No HTTP error or deployment log was available. The reason is not established. No production imports have been submitted, and the new deployment has not been verified live. The 44 new leads and five original app leads are committed and ready for import once service returns. No server settings or secrets were changed.
+
+To finish: verify the new header and /profiles/new on the live app, POST each committed discovery JSON batch to /api/import using the existing job-token convention, confirm a 40-row ranked queue and the full collection count, and exercise Show 10 more on production. Do not create QA profiles in production; profile creation was tested only in the disposable local database.
