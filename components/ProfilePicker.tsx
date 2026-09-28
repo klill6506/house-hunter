@@ -1,2 +1,36 @@
-"use client";import {useEffect,useState} from "react";
-type P={id:string;name:string};export default function ProfilePicker({current}:{current:string}){const [profiles,setProfiles]=useState<P[]>([]);useEffect(()=>{fetch("/api/profiles").then(r=>r.json()).then(setProfiles).catch(()=>{})},[]);return <div className="profilePicker"><span>Search profile</span><select value={current} onChange={e=>location.href=`/?profile=${encodeURIComponent(e.target.value)}`}>{profiles.length?profiles.map(p=><option key={p.id} value={p.id}>{p.name}</option>):<option value={current}>Mountain House</option>}</select><a href={`/profiles/${current}`}>Edit criteria</a></div>}
+"use client";
+export default function ProfilePicker({
+  current,
+  profiles,
+}: {
+  current: string;
+  profiles: { id: string; name: string }[];
+}) {
+  return (
+    <div className="profilePicker">
+      <label htmlFor="profile-select">Search profile</label>
+      <select
+        id="profile-select"
+        value={current}
+        onChange={(e) =>
+          (location.href = `/?profile=${encodeURIComponent(e.target.value)}`)
+        }
+      >
+        {profiles.map((p) => (
+          <option key={p.id} value={p.id}>
+            {p.name}
+          </option>
+        ))}
+      </select>
+      <div className="profileLinks">
+        <a href={`/profiles/${encodeURIComponent(current)}`}>Edit criteria</a>
+        <a
+          className="button buttonGold"
+          href={`/profiles/new?from=${encodeURIComponent(current)}`}
+        >
+          + New profile
+        </a>
+      </div>
+    </div>
+  );
+}

@@ -1,4 +1,51 @@
-import {db} from "./db";import {evaluatePropertyText} from "./jev-client";import {factualCriteria,rankListing} from "./rank";import {mergeCriteria} from "./pipeline";import type {Listing,CriterionResult} from "./types";
-const toListing=(x:any):Listing=>({id:x.id,address:x.address,city:x.city,state:x.state,price:x.price??0,beds:x.beds??0,baths:x.baths??0,sqft:x.sqft??undefined,acres:x.acres??undefined,url:x.url??undefined,source:x.source,description:x.description??undefined,facts:(x.facts as Record<string,unknown>)??undefined});
-function applyProfile(criteria:CriterionResult[],cfg:any){const pc=cfg?.criteria||{};return criteria.map(c=>{const x=pc[c.key];let score=c.score;if(c.key==="beds"&&score!==null&&pc.bedrooms?.target){const n=Number(c.evidence?.match(/[\d.]+/)?.[0]||0);score=n>=pc.bedrooms.target?100:n===pc.bedrooms.target-1?65:25}if(c.key==="baths"&&score!==null&&pc.bathrooms?.target){const n=Number(c.evidence?.match(/[\d.]+/)?.[0]||0);score=n>=pc.bathrooms.target?100:n>=pc.bathrooms.target-.5?70:25}return {...c,score,weight:x?.weight??c.weight}})}
-export async function scoreProfile(profileId:string){const profile=await db.searchProfile.findUnique({where:{id:profileId}});if(!profile)throw new Error("Profile not found");const cfg=profile.criteria as any;const rows=await db.listing.findMany();let scored=0;for(const row of rows){const l=toListing(row);const min=cfg?.price?.min??500000,max=cfg?.price?.max??1200000;if(l.price&&(l.price<min||l.price>max))continue;const base=factualCriteria(l);let jev=[] as Awaited<ReturnType<typeof evaluatePropertyText>>;try{jev=await evaluatePropertyText(l)}catch(e){console.error("Jev score failed",l.id,e)}const criteria=applyProfile(mergeCriteria(base,jev),cfg);const r=rankListing(l,criteria);await db.listingScore.upsert({where:{profileId_listingId:{profileId,listingId:l.id}},update:{score:r.score,coverage:r.coverage,criteria:r.criteria as any,scoredAt:new Date()},create:{profileId,listingId:l.id,score:r.score,coverage:r.coverage,criteria:r.criteria as any}});scored++}return {scored}}
+import { db } from "./db";
+import { evaluatePropertyText } from "./jev-client";
+import { factualCriteria, rankListing } from "./rank";
+import { mergeCriteria } from "./pipeline";
+import { configOf, inPriceRange, profileCriteria } from "./profile-config";
+import type { Listing } from "./types";
+export async function scoreProfile(profileId: string) {
+  const profile = await db.searchProfile.findUnique({
+    where: { id: profileId },
+  });
+  if (!profile) throw new Error("Profile not found");
+  const cfg = configOf(profile.criteria);
+  const rows = await db.listing.findMany();
+  let scored = 0;
+  for (const row of rows) {
+    const l: Listing = {
+      ...row,
+      price: row.price ?? 0,
+      beds: row.beds ?? 0,
+      baths: row.baths ?? 0,
+      sqft: row.sqft ?? undefined,
+      acres: row.acres ?? undefined,
+      url: row.url ?? undefined,
+      description: row.description ?? undefined,
+      facts: row.facts as Record<string, unknown> | undefined,
+    };
+    if (!inPriceRange(l, cfg)) continue;
+    let jev: Awaited<ReturnType<typeof evaluatePropertyText>> = [];
+    try {
+      jev = await evaluatePropertyText(l);
+    } catch {
+      console.error("Property enrichment unavailable", l.id);
+    }
+    const r = rankListing(
+      l,
+      profileCriteria(l, mergeCriteria(factualCriteria(l), jev), cfg),
+    );
+    const data = {
+      score: r.score,
+      coverage: r.coverage,
+      criteria: r.criteria as any,
+    };
+    await db.listingScore.upsert({
+      where: { profileId_listingId: { profileId, listingId: l.id } },
+      update: { ...data, scoredAt: new Date() },
+      create: { profileId, listingId: l.id, ...data },
+    });
+    scored++;
+  }
+  return { scored };
+}

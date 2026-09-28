@@ -1,5 +1,181 @@
-import ReactionButtons from "../components/ReactionButtons";import ProfilePicker from "../components/ProfilePicker";import {seedListings} from "../lib/listings";import {factualCriteria,rankListing} from "../lib/rank";import {db} from "../lib/db";import type {RankedListing} from "../lib/types";
-export const dynamic="force-dynamic";
-const criteria=[['Mountain view','Required'],['$500K–$1.2M','Required'],['~3 hours from Athens, GA','Strong boundary'],['4 bed / 3 bath','Preferred minimum'],['Main-floor living','Near requirement'],['Easy year-round access','Near requirement'],['Reliable high-speed internet','Near requirement'],['Water feature / lake view','Highly desirable'],['Outdoor living','Highly desirable'],['Appealing small town nearby','Preferred'],['Hospital access','Preferred'],['STR option','Desirable'],['Detached single-family','Strong preference'],['Move-in ready','Strong preference']];
-async function getRanked(profileId:string):Promise<RankedListing[]>{try{const rows=await db.listingScore.findMany({where:{profileId},include:{listing:true},orderBy:[{score:"desc"},{coverage:"desc"}],take:40});if(rows.length)return rows.map((x:any)=>({...x.listing,price:x.listing.price??0,beds:x.listing.beds??0,baths:x.listing.baths??0,sqft:x.listing.sqft??undefined,acres:x.listing.acres??undefined,url:x.listing.url??undefined,description:x.listing.description??undefined,facts:x.listing.facts??undefined,score:x.score,coverage:x.coverage,criteria:x.criteria}));}catch{}return seedListings.map(l=>rankListing(l,factualCriteria(l))).sort((a,b)=>b.score-a.score)}
-export default async function Home({searchParams}:{searchParams:Promise<{profile?:string}>}){const q=await searchParams;const profileId=q.profile||"mountain-house";const ranked=await getRanked(profileId);return <main><header><div><p className="eyebrow">HOUSE HUNTER</p><h1>Mountain House</h1><p>Rank the whole market. Review only the homes worth your time.</p></div><ProfilePicker current={profileId}/></header><section className="stats"><div><b>40</b><span>Target review queue</span></div><div><b>{criteria.length}</b><span>Active criteria</span></div><div><b>{ranked.length}</b><span>Ranked listings</span></div></section><div className="grid"><section><h2>Top matches</h2><p className="muted">The match score uses what we know so far. “Researched” shows how much of your wish list we’ve actually verified for that house.</p>{ranked.map((x,i)=><article className="card" key={x.id}><div className="rank">#{i+1}</div><div><div className="score"><span className="matchPill">{x.score}% match</span><span className="evidencePill">{x.coverage}% researched</span></div><h3><a href={`/listing/${x.id}`}>{x.address}, {x.city}, {x.state}</a></h3><b>{new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(x.price)}</b><p>{x.beds} bd · {x.baths} ba{x.sqft?` · ${x.sqft.toLocaleString()} sf`:''}{x.acres?` · ${x.acres} ac`:''}</p><div className="cardButtons"><ReactionButtons id={x.id} profileId={profileId}/>{x.url&&<a className="viewButton" href={x.url} target="_blank" rel="noreferrer">View listing ↗</a>}</div></div></article>)}</section><aside><h2>Your criteria</h2>{criteria.map(x=><div className="criterion" key={x[0]}><span>{x[0]}</span><small>{x[1]}</small></div>)}<p className="note">A low researched percentage means we still have homework to do—it is not a negative score. Property risks are flagged rather than automatically rejected.</p></aside></div></main>}
+import ProfilePicker from "../components/ProfilePicker";
+import ListingResults from "../components/ListingResults";
+import { db } from "../lib/db";
+import { getReviewQueue } from "../lib/review-queue";
+import { criterionLabels } from "../lib/profile-config";
+import { notFound } from "next/navigation";
+export const dynamic = "force-dynamic";
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ profile?: string; saved?: string }>;
+}) {
+  const q = await searchParams;
+  const profileId = q.profile || "mountain-house";
+  let queue: Awaited<ReturnType<typeof getReviewQueue>>;
+  let profiles: { id: string; name: string }[];
+  try {
+    [queue, profiles] = await Promise.all([
+      getReviewQueue(profileId),
+      db.searchProfile.findMany({
+        select: { id: true, name: true },
+        orderBy: { createdAt: "asc" },
+      }),
+    ]);
+  } catch {
+    return (
+      <main>
+        <p className="brand">⌂ HOUSE HUNTER</p>
+        <section className="empty">
+          <h1>We couldn’t load your homes.</h1>
+          <p>
+            The listing database is temporarily unavailable. Please try again
+            shortly.
+          </p>
+          <a className="button" href="/">
+            Try again
+          </a>
+        </section>
+      </main>
+    );
+  }
+  if (!queue) notFound();
+  const { profile, config, listings, inventoryCount, matchingCount } = queue;
+  const active = Object.entries(config.criteria).filter(
+    ([, c]) => c.weight > 0,
+  );
+  const money = (n: number) =>
+    new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 0,
+    }).format(n);
+  return (
+    <main>
+      <nav className="topbar">
+        <a className="brand" href="/">
+          ⌂ HOUSE HUNTER
+        </a>
+        <span>A place worth finding.</span>
+      </nav>
+      <header className="hero">
+        <div className="heroCopy">
+          <p className="eyebrow">YOUR NEXT CHAPTER</p>
+          <h1>{profile.name}</h1>
+          <p>
+            A little less searching.
+            <br />A little closer to home.
+          </p>
+          <div className="heroTags">
+            <span>
+              {money(config.price.min)} – {money(config.price.max)}
+            </span>
+            <span>
+              {config.criteria.bedrooms?.target ?? 4}+ beds ·{" "}
+              {config.criteria.bathrooms?.target ?? 3}+ baths preferred
+            </span>
+          </div>
+        </div>
+        <ProfilePicker current={profileId} profiles={profiles} />
+      </header>
+      {q.saved && (
+        <p className="notice" role="status">
+          Profile saved. You’re viewing {profile.name}.
+        </p>
+      )}
+      <section className="stats" aria-label="Search summary">
+        <div>
+          <b>
+            {listings.length}
+            <small> / 40</small>
+          </b>
+          <span>Homes in your review queue</span>
+        </div>
+        <div>
+          <b>{inventoryCount}</b>
+          <span>Homes in the shared collection</span>
+        </div>
+        <div>
+          <b>{active.length}</b>
+          <span>Preferences shaping your search</span>
+        </div>
+      </section>
+      <div className="grid">
+        <section>
+          <div className="sectionHeading">
+            <div>
+              <p className="eyebrow">THE SHORTLIST</p>
+              <h2>Your top matches</h2>
+            </div>
+            <span className="subtleBadge">Ranked for you</span>
+          </div>
+          <p className="muted">
+            Up to 40 homes, ranked by your preferences. A high match with little
+            research is a promising lead, not a verified fit.
+          </p>
+          <ListingResults
+            key={profileId}
+            listings={listings}
+            profileId={profileId}
+            matchingCount={matchingCount}
+            inventoryCount={inventoryCount}
+          />
+        </section>
+        <aside>
+          <div className="sectionHeading">
+            <h2>Your wish list</h2>
+            <a href={`/profiles/${encodeURIComponent(profileId)}`}>Edit</a>
+          </div>
+          <div className="criterion">
+            <span>Budget</span>
+            <strong>
+              {money(config.price.min)}–{money(config.price.max)}
+            </strong>
+          </div>
+          {active.map(([key, c]) => (
+            <div className="criterion" key={key}>
+              <span>{criterionLabels[key] || key}</span>
+              <strong>
+                {c.target !== undefined
+                  ? `${c.target}+ preferred`
+                  : `${c.weight}/10`}
+              </strong>
+            </div>
+          ))}
+          {config.anchor && (
+            <p className="note">
+              Search area: around {config.anchor}
+              {config.driveHoursApprox
+                ? `, roughly ${config.driveHoursApprox} hours away`
+                : ""}
+              . Drive times and view quality still need checking.
+            </p>
+          )}
+          <div className="scoreGuide">
+            <h3>Read the scores</h3>
+            <p>
+              <b>Match</b> measures how well known facts fit your preferences.
+            </p>
+            <p>
+              <b>Researched</b> measures how much of your wish list has
+              supporting evidence. Unknowns stay unknown.
+            </p>
+          </div>
+          <a
+            className="button buttonSecondary fullWidth"
+            href={`/profiles/new?from=${encodeURIComponent(profileId)}`}
+          >
+            Create your own profile ↗
+          </a>
+        </aside>
+      </div>
+      <footer>
+        HOUSE HUNTER{" "}
+        <span>
+          Public search leads · Check price and availability on the source
+          listing.
+        </span>
+      </footer>
+    </main>
+  );
+}

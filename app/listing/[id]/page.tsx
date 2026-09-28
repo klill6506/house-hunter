@@ -1,3 +1,105 @@
-import {notFound} from "next/navigation";import {db} from "../../../lib/db";import {seedListings} from "../../../lib/listings";import {factualCriteria,rankListing} from "../../../lib/rank";import ScoreBreakdown from "../../../components/ScoreBreakdown";import ReactionButtons from "../../../components/ReactionButtons";
-export const dynamic="force-dynamic";
-export default async function ListingPage({params}:{params:Promise<{id:string}>}){const {id}=await params;let l:any=null,r:any=null;try{const row=await db.listing.findUnique({where:{id},include:{scores:{where:{profileId:"mountain-house"},take:1},sightings:true}});if(row){l={...row,price:row.price??0,beds:row.beds??0,baths:row.baths??0};const s=row.scores[0];r=s?{...l,score:s.score,coverage:s.coverage,criteria:s.criteria}:rankListing(l,factualCriteria(l))}}catch{}if(!l){l=seedListings.find(x=>x.id===id);if(l)r=rankListing(l,factualCriteria(l))}if(!l||!r)notFound();return <main><a href="/">← Back to rankings</a><p className="eyebrow">PROPERTY REVIEW</p><h1>{l.address}</h1><h2>{l.city}, {l.state}</h2><div className="heroScore"><b>{Math.round(r.score)}%</b><span>current match</span><small>{Math.round(r.coverage)}% evidence coverage</small></div><p>{l.beds} bedrooms · {l.baths} bathrooms{l.sqft?` · ${l.sqft.toLocaleString()} sq ft`:""}{l.acres?` · ${l.acres} acres`:""}</p><ReactionButtons id={l.id}/><h2>Why it scored this way</h2><ScoreBreakdown criteria={r.criteria}/><p className="note">A ? means House Hunter does not yet have enough evidence. It does not mean the property failed that criterion.</p>{l.url&&<a className="sourceLink" href={l.url}>Open source listing ↗</a>}</main>}
+import { notFound } from "next/navigation";
+import { db } from "../../../lib/db";
+import { factualCriteria, rankListing } from "../../../lib/rank";
+import { configOf, profileCriteria } from "../../../lib/profile-config";
+import type { CriterionResult, Listing } from "../../../lib/types";
+import ScoreBreakdown from "../../../components/ScoreBreakdown";
+import ReactionButtons from "../../../components/ReactionButtons";
+export const dynamic = "force-dynamic";
+export default async function ListingPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ profile?: string }>;
+}) {
+  const { id } = await params;
+  const { profile: profileId = "mountain-house" } = await searchParams;
+  const [row, profile] = await Promise.all([
+    db.listing.findUnique({
+      where: { id },
+      include: {
+        scores: { orderBy: { scoredAt: "desc" }, take: 1 },
+        sightings: { orderBy: { discoveredAt: "desc" }, take: 1 },
+      },
+    }),
+    db.searchProfile.findUnique({ where: { id: profileId } }),
+  ]);
+  if (!row || !profile) notFound();
+  const l: Listing = {
+    ...row,
+    price: row.price ?? 0,
+    beds: row.beds ?? 0,
+    baths: row.baths ?? 0,
+    sqft: row.sqft ?? undefined,
+    acres: row.acres ?? undefined,
+    url: row.url ?? undefined,
+    description: row.description ?? undefined,
+    facts: row.facts as Record<string, unknown> | undefined,
+  };
+  const evidence = row.scores[0]?.criteria as CriterionResult[] | undefined;
+  const r = rankListing(
+    l,
+    profileCriteria(
+      l,
+      evidence || factualCriteria(l),
+      configOf(profile.criteria),
+    ),
+  );
+  return (
+    <main className="editorPage">
+      <a
+        className="backLink"
+        href={`/?profile=${encodeURIComponent(profileId)}`}
+      >
+        ← Back to {profile.name}
+      </a>
+      <p className="eyebrow">PROPERTY REVIEW</p>
+      <h1>{l.address}</h1>
+      <h2>
+        {l.city}, {l.state}
+      </h2>
+      <div className="heroScore">
+        <b>{r.score}%</b>
+        <span>current match</span>
+        <small>{r.coverage}% researched</small>
+      </div>
+      <p>
+        {l.price
+          ? new Intl.NumberFormat("en-US", {
+              style: "currency",
+              currency: "USD",
+              maximumFractionDigits: 0,
+            }).format(l.price)
+          : "Price unknown"}{" "}
+        · {l.beds || "Unknown"} bedrooms · {l.baths || "Unknown"} bathrooms
+        {l.sqft ? ` · ${l.sqft.toLocaleString()} sq ft` : ""}
+      </p>
+      <ReactionButtons id={l.id} profileId={profileId} />
+      <h2 style={{ marginTop: 32 }}>Why it scored this way</h2>
+      <ScoreBreakdown criteria={r.criteria} />
+      <p className="note">
+        Unknown evidence is not a failed criterion. Source prices and
+        availability may have changed. Verify view quality, drive time, and
+        other important details before relying on this match.
+      </p>
+      {l.url && /^https?:\/\//i.test(l.url) && (
+        <a
+          className="button sourceLink"
+          href={l.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open source listing ↗
+        </a>
+      )}
+      <p className="muted">
+        {l.source}
+        {row.sightings[0]
+          ? ` · Discovered ${row.sightings[0].discoveredAt.toLocaleDateString("en-US", { timeZone: "UTC" })}`
+          : ""}{" "}
+        · Availability unverified
+      </p>
+    </main>
+  );
+}

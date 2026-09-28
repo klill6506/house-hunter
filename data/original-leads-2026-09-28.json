@@ -1,0 +1,64 @@
+{
+  "hits": [
+    {
+      "source": "Original House Hunter lead",
+      "sourceUrl": "https://www.zillow.com/homedetails/199-Fox-Run-Dr-Blue-Ridge-GA-30513/96832766_zpid/",
+      "address": "199 Fox Run Dr",
+      "city": "Blue Ridge",
+      "state": "GA",
+      "price": 845700,
+      "beds": 4,
+      "baths": 5,
+      "sqft": 4160,
+      "discoveredAt": "2026-09-28T03:00:00.000Z"
+    },
+    {
+      "source": "Original House Hunter lead",
+      "sourceUrl": "https://www.zillow.com/homedetails/180-Red-Plum-Dr-Ellijay-GA-30540/464784249_zpid/",
+      "address": "180 Red Plum Dr",
+      "city": "Ellijay",
+      "state": "GA",
+      "price": 599000,
+      "beds": 4,
+      "baths": 3,
+      "sqft": 2328,
+      "discoveredAt": "2026-09-28T03:00:00.000Z"
+    },
+    {
+      "source": "Original House Hunter lead",
+      "sourceUrl": "https://www.zillow.com/homedetails/1081-Dills-Rd-Blue-Ridge-GA-30513/96831198_zpid/",
+      "address": "1081 Dills Rd",
+      "city": "Blue Ridge",
+      "state": "GA",
+      "price": 1049000,
+      "beds": 5,
+      "baths": 4,
+      "sqft": 3012,
+      "discoveredAt": "2026-09-28T03:00:00.000Z"
+    },
+    {
+      "source": "Original House Hunter lead",
+      "sourceUrl": "https://www.zillow.com/homedetails/1722-Victoria-Woods-Cir-Hiawassee-GA-30546/105412282_zpid/",
+      "address": "1722 Victoria Woods Cir",
+      "city": "Hiawassee",
+      "state": "GA",
+      "price": 829000,
+      "beds": 3,
+      "baths": 3,
+      "sqft": 3987,
+      "discoveredAt": "2026-09-28T03:00:00.000Z"
+    },
+    {
+      "source": "Original House Hunter lead",
+      "sourceUrl": "https://www.zillow.com/homedetails/64-Grice-Woods-Rd-Blue-Ridge-GA-30513/228800647_zpid/",
+      "address": "64 Grice Woods Rd",
+      "city": "Blue Ridge",
+      "state": "GA",
+      "price": 660000,
+      "beds": 4,
+      "baths": 3,
+      "sqft": 2520,
+      "discoveredAt": "2026-09-28T03:00:00.000Z"
+    }
+  ]
+}
