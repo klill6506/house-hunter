@@ -1,9 +1,9 @@
 :root {
-  --slate: #346c9e;
+  --slate: #146fad;
   --ink: #29384b;
   --muted: #627085;
-  --line: #dce3ed;
-  --paper: #f2f7fc;
+  --line: #d3e5f3;
+  --paper: #eef7ff;
   --accent: #e0f1ff;
 }
 * {
@@ -93,7 +93,7 @@ button,
 button:hover,
 .button:hover,
 .viewButton:hover {
-  background: #285984;
+  background: #0c598e;
 }
 button:disabled {
   opacity: 0.6;
@@ -105,7 +105,7 @@ button:disabled {
   border-color: #c9d5e4;
 }
 .buttonSecondary:hover {
-  background: #eef5fc;
+  background: #eaf5ff;
 }
 .fullWidth {
   width: 100%;
@@ -136,8 +136,8 @@ button:disabled {
   align-items: center;
   justify-content: space-between;
   gap: 42px;
-  background: linear-gradient(115deg, #3e709f, #537fa6);
-  color: white;
+  background: linear-gradient(115deg, #c5e7ff, #83c6f4);
+  color: #163e60;
   border: 1px solid #ffffff60;
   box-shadow: 0 12px 32px #334c7015;
   border-radius: 26px;
@@ -152,8 +152,8 @@ button:disabled {
   right: -230px;
   top: -280px;
   border-radius: 50%;
-  border: 90px solid #ffffff07;
-  box-shadow: 0 0 0 90px #ffffff04;
+  border: 90px solid #ffffff14;
+  box-shadow: 0 0 0 90px #ffffff0b;
   pointer-events: none;
 }
 .heroCopy {
@@ -166,11 +166,11 @@ button:disabled {
   margin-bottom: 15px;
 }
 .hero .eyebrow {
-  color: var(--accent);
+  color: #275f87;
 }
 .heroCopy > p:not(.eyebrow) {
   font-size: 18px;
-  color: #e9f4ff;
+  color: #275574;
   margin-bottom: 24px;
 }
 .heroTags {
@@ -179,8 +179,8 @@ button:disabled {
   gap: 8px;
 }
 .heroTags span {
-  background: #ffffff12;
-  border: 1px solid #ffffff25;
+  background: #ffffff66;
+  border: 1px solid #ffffff70;
   border-radius: 30px;
   padding: 7px 12px;
   font-size: 12px;
@@ -229,7 +229,7 @@ button:disabled {
   padding: 9px 12px;
 }
 .profileLinks .buttonAccent:hover {
-  background: #285984;
+  background: #0c598e;
 }
 .stats {
   display: grid;
@@ -315,7 +315,7 @@ button:disabled {
   align-items: center;
   gap: 12px;
   padding: 12px 22px;
-  background: #eef5fc;
+  background: #eaf5ff;
   border-bottom: 1px solid var(--line);
 }
 .rank {
@@ -329,8 +329,8 @@ button:disabled {
   flex: 1;
 }
 .matchPill {
-  background: #e0effc;
-  color: #2e618b;
+  background: #d5ebff;
+  color: #155783;
   padding: 5px 10px;
   border-radius: 20px;
   font-size: 12px;
@@ -444,7 +444,7 @@ button:disabled {
 aside {
   border: 1px solid var(--line);
   border-radius: 20px;
-  background: #e9f2fb;
+  background: #e3f1fc;
   padding: 24px;
 }
 aside h2 {
