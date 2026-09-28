@@ -1,0 +1,4 @@
+"use client";
+import {useEffect,useState} from "react";
+import type {Reaction} from "../lib/types";
+export default function ReactionButtons({id}:{id:string}){const [value,setValue]=useState<Reaction>(null);useEffect(()=>{setValue(localStorage.getItem("reaction:"+id) as Reaction)},[id]);function pick(v:Reaction){setValue(v);if(v)localStorage.setItem("reaction:"+id,v);else localStorage.removeItem("reaction:"+id)}return <div className="actions">{([["love","❤️ Love"],["like","👍 Like"],["pass","👎 Pass"]] as const).map(([v,label])=><button key={v} className={value===v?"selected":""} onClick={()=>pick(value===v?null:v)}>{label}</button>)}</div>}
